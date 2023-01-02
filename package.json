@@ -7,6 +7,7 @@
   "license": "MIT",
   "bin": {
 	  "test": "test.js",
-	  "mize-react-render": "main.js"
+	  "mize-react-render": "main.js",
+	  "create-mize-react-render": "create-render.js"
   }
 }
