@@ -13,7 +13,7 @@ if (fs.existsSync(working_dir + project_name)){
 }
 
 
-fs.mkdir(working_dir + project_name)
+fs.mkdirSync(working_dir + project_name)
 
 
 
