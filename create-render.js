@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require("fs")
+const { exec } = require('child_process');
 
 let project_name = process.argv[2]
 if (!project_name) {
@@ -9,6 +10,7 @@ if (!project_name) {
 
 const working_dir = process.cwd()
 const file_dir = __dirname
+const project_dir = working_dir + "/" + project_name
 
 //check if dir alreay exists
 if (fs.existsSync(working_dir + "/" + project_name)){
@@ -16,10 +18,42 @@ if (fs.existsSync(working_dir + "/" + project_name)){
 	process.exit()
 }
 
-console.log(working_dir + "/" + project_name)
-fs.mkdirSync(working_dir + "/" + project_name)
+//make the folder
+fs.mkdirSync(project_dir)
 
+//yarn init
+exec("yarn init -y")
 
+//copy over the template
+exec("cp -r " + file_dir + "/template/* " + project_dir)
 
+//package.json
+const package_json = `{
+	"name": "` + project_name + `",
+	"version": "1.0.0",
+	"license": "MIT",
+	"scripts": {
+		"dev": "webpack ./src",
+		"build": "webpack ./src"
+	}
+}`
+
+fs.writeFileSync(project_dir + "/package.json", package_json)
+
+//mize.toml
+const mize_toml = `
+[[render]]
+id = "` + project_name + `"
+folder = "` + project_name + `"
+main = "build/main.js"
+webroot = "public"
+`
+
+fs.writeFileSync(project_dir + "/mize.toml", mize_toml)
+
+//yarn add
+exec("yarn add -D @babel/core @babel/preset-env babel-loader eslint eslint-config-airbnb-base react-tracked webpack webpack-cli @babel/plugin-transform-runtime @babel/preset-react")
+
+exec("yarn add react react-dom")
 
 
