@@ -1,4 +1,4 @@
-
+#!/usr/bin/env node
 
 const project_name = process.argv[1]
 
