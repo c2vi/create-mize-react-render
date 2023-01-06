@@ -60,18 +60,21 @@ const dev_deb_log = exec("yarn add -D @babel/core @babel/preset-env babel-loader
 
 const deb_log = exec("yarn add react react-dom")
 
+//yarn install
+const install_log = exec("yarn install")
 
 //log all the data from all the exec's
 dev_deb_log.stdout.on('data', function(data) {
-	    console.log(data); 
+	process.stdout.write(data);
 });
-
 deb_log.stdout.on('data', function(data) {
-	    console.log(data); 
+	process.stdout.write(data);
 });
-
 init_log.stdout.on('data', function(data) {
-	    console.log(data); 
+	process.stdout.write(data);
+});
+install_log.stdout.on('data', function(data) {
+	process.stdout.write(data);
 });
 
 
