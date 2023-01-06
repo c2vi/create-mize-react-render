@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const fs = require("fs")
+
 const project_name = process.argv[1]
 
 //check if dir alreay exists
