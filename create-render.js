@@ -27,7 +27,8 @@ process.chdir(project_dir)
 const init_log = exec("yarn init -y")
 
 //copy over the template
-const copy_log = exec("cp -r " + file_dir + "/template/* " + project_dir)
+exec("cp -r " + file_dir + "/template/* " + project_dir)
+exec("cp -r " + file_dir + "/template/.babelrc " + project_dir)
 
 //package.json
 const package_json = `{
@@ -73,6 +74,5 @@ init_log.stdout.on('data', function(data) {
 	    console.log(data); 
 });
 
-copy_log.stdout.on('data', function(data) {
-	    console.log(data); 
-});
+
+
