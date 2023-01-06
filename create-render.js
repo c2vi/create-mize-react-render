@@ -49,7 +49,7 @@ const mize_toml = `
 [[render]]
 id = "` + project_name + `"
 folder = "` + project_name + `"
-main = "build/main.js"
+main = "public/main.js"
 webroot = "public"
 `
 
