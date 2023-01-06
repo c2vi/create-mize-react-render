@@ -21,6 +21,8 @@ if (fs.existsSync(working_dir + "/" + project_name)){
 //make the folder
 fs.mkdirSync(project_dir)
 
+process.chdir(project_dir)
+
 //yarn init
 exec("yarn init -y")
 
