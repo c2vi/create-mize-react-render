@@ -73,9 +73,9 @@ deb_log.stdout.on('data', function(data) {
 init_log.stdout.on('data', function(data) {
 	process.stdout.write(data);
 });
-install_log.stdout.on('data', function(data) {
-	process.stdout.write(data);
-});
+//install_log.stdout.on('data', function(data) {
+	//process.stdout.write(data);
+//});
 
 console.log("run yarn install, if it does not build!!!!!")
 
