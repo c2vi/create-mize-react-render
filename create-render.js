@@ -12,7 +12,7 @@ if (fs.existsSync(working_dir + "/" + project_name)){
 	process.exit()
 }
 
-
+console.log(working_dir + "/" + project_name)
 fs.mkdirSync(working_dir + "/" + project_name)
 
 
