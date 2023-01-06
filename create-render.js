@@ -56,12 +56,12 @@ webroot = "public"
 fs.writeFileSync(project_dir + "/mize.toml", mize_toml)
 
 //yarn add
-const dev_deb_log = exec("yarn add -D @babel/core @babel/preset-env babel-loader eslint eslint-config-airbnb-base react-tracked webpack webpack-cli @babel/plugin-transform-runtime @babel/preset-react")
+const dev_deb_log = exec("npm i --save-dev @babel/core @babel/preset-env babel-loader eslint eslint-config-airbnb-base react-tracked webpack webpack-cli @babel/plugin-transform-runtime @babel/preset-react")
 
-const deb_log = exec("yarn add react react-dom")
+const deb_log = exec("npm i react react-dom")
 
 //yarn install
-const install_log = exec("yarn install")
+//const install_log = exec(" install")
 
 //log all the data from all the exec's
 dev_deb_log.stdout.on('data', function(data) {
