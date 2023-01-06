@@ -2,7 +2,11 @@
 
 const fs = require("fs")
 
-const project_name = process.argv[1]
+const project_name = process.argv[2]
+if (project_name == "") {
+	project_name = "my-mize-react-render"
+}
+
 const working_dir = process.cwd()
 const file_dir = __dirname
 
