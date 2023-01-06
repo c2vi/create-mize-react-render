@@ -3,6 +3,8 @@
 const fs = require("fs")
 
 const project_name = process.argv[1]
+console.log(process.cwd())
+console.log(__dirname)
 
 //check if dir alreay exists
 if (fs.existsSync(project_name)){
@@ -10,8 +12,6 @@ if (fs.existsSync(project_name)){
 	process.exit()
 }
 
-console.log(process.cwd())
-console.log(__dirname)
 
 fs.mkdir(project_name)
 
