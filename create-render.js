@@ -3,17 +3,17 @@
 const fs = require("fs")
 
 const project_name = process.argv[1]
-console.log(process.cwd())
-console.log(__dirname)
+const working_dir = process.cwd()
+const file_dir = __dirname
 
 //check if dir alreay exists
-if (fs.existsSync(project_name)){
+if (fs.existsSync(working_dir + project_name)){
 	console.log("There already exists a folder with the name " + project_name)
 	process.exit()
 }
 
 
-fs.mkdir(project_name)
+fs.mkdir(working_dir + project_name)
 
 
 
