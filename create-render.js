@@ -3,7 +3,7 @@
 const fs = require("fs")
 
 const project_name = process.argv[2]
-if (project_name == "") {
+if (!project_name) {
 	project_name = "my-mize-react-render"
 }
 
