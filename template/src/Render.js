@@ -3,7 +3,7 @@ import React from "react";
 const App = () =>{
     return (
         <h1>
-            Welcome to React App thats build using Webpack and Babel separately
+            Welcome to the start of a MiZe Render with React.
         </h1>
     )
 }
