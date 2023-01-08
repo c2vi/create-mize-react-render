@@ -67,9 +67,9 @@ const dev_deb_log = exec("npm i @babel/core @babel/preset-env babel-loader eslin
 dev_deb_log.stdout.on('data', function(data) {
 	process.stdout.write(data);
 });
-deb_log.stdout.on('data', function(data) {
-	process.stdout.write(data);
-});
+//deb_log.stdout.on('data', function(data) {
+	//process.stdout.write(data);
+//});
 init_log.stdout.on('data', function(data) {
 	process.stdout.write(data);
 });
